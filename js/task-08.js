@@ -7,14 +7,16 @@ function handleSubmit(event) {
 
   const { email, password } = event.currentTarget.elements;
 
-  if (email.value === "" || password.value === "") {
+  if (email.value.trim() === "" || password.value.trim() === "") {
     alert("Всі поля повинні бути заповнені");
-  } else {
-    const obj = {
-      email: email.value,
-      password: password.value,
-    };
-    console.log(obj);
+    return;
   }
+
+  const obj = {
+    email: email.value,
+    password: password.value,
+  };
+  console.log(obj);
+
   event.currentTarget.reset();
 }
